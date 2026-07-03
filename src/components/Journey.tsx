@@ -19,12 +19,12 @@ export default function Journey() {
   ];
 
   return (
-    <section id="journey" className="px-gutter max-w-container-max mx-auto mb-section-padding relative">
+    <section id="journey" className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding relative">
       <div className="flex flex-col md:flex-row gap-12">
         {/* Left Side Sticky Header */}
         <div className="md:w-1/3">
           <div className="md:sticky md:top-32 space-y-4">
-            <h2 className="font-display text-4xl font-bold text-white tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight">
               Academic Path &amp; Journey
             </h2>
             <p className="font-body text-sm text-on-surface-variant leading-relaxed">
@@ -39,7 +39,7 @@ export default function Journey() {
             <div key={index} className="relative group transition-all duration-300">
               {/* Bullet Node */}
               <div
-                className={`absolute -left-[41px] top-1.5 w-4.5 h-4.5 rounded-full ring-4 transition-all duration-500 group-hover:scale-110 ${step.color} ${step.ringColor}`}
+                className={`absolute -left-[40px] top-1.5 w-4 h-4 rounded-full ring-4 transition-all duration-500 group-hover:scale-110 ${step.color} ${step.ringColor}`}
               />
 
               {/* Title & Date */}

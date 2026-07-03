@@ -91,8 +91,11 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-surface-container/95 border-b border-white/10 backdrop-blur-2xl transition-all duration-300 overflow-hidden ${mobileMenuOpen ? "max-h-screen py-6 opacity-100" : "max-h-0 py-0 opacity-0 pointer-events-none"
-          }`}
+        className={`md:hidden absolute top-full left-0 w-full bg-surface-container/95 border-b border-white/10 backdrop-blur-2xl transition-all duration-300 ${
+          mobileMenuOpen
+            ? "max-h-[calc(100vh-80px)] py-6 opacity-100 overflow-y-auto"
+            : "max-h-0 py-0 opacity-0 pointer-events-none overflow-hidden"
+        }`}
       >
         <div className="flex flex-col items-center gap-6 px-gutter">
           {navLinks.map((link) => (

@@ -120,13 +120,13 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="px-gutter max-w-container-max mx-auto mb-section-padding relative">
-      <h2 className="font-display text-4xl font-bold text-white mb-stack-lg tracking-tight">
+    <section id="projects" className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding relative">
+      <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-stack-lg tracking-tight">
         Selected Projects
       </h2>
 
       {/* Bento Grid */}
-      <div className="grid md:grid-cols-6 gap-6 h-auto">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-6 h-auto">
         {projectsList.map((project, index) => {
           if (index === 0) {
             // Featured Project Layout
@@ -228,7 +228,7 @@ export default function Projects() {
             className="absolute inset-0 cursor-zoom-out"
           />
 
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface-container-low border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 flex flex-col gap-6 scrollbar-thin scrollbar-thumb-white/10 z-10">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-surface-container-low border border-white/10 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col gap-6 scrollbar-thin scrollbar-thumb-white/10 z-10">
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}

@@ -82,16 +82,16 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-gutter max-w-container-max mx-auto mb-section-padding relative">
-      <div className="glass-card p-8 md:p-16 rounded-[2rem] overflow-hidden relative border border-white/10">
+    <section id="contact" className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding relative">
+      <div className="glass-card p-6 sm:p-8 md:p-16 rounded-2xl sm:rounded-[2rem] overflow-hidden relative border border-white/10">
         {/* Soft background light */}
         <div className="absolute right-0 bottom-0 w-80 h-80 bg-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="grid md:grid-cols-2 gap-16 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 relative z-10">
           {/* Left Column: Info */}
           <div className="flex flex-col justify-between">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-white mb-6 leading-none tracking-tight">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-none tracking-tight">
                 Get in <span className="text-secondary text-glow">Touch</span>
               </h2>
               <p className="font-body text-body-lg text-on-surface-variant mb-10 max-w-md">

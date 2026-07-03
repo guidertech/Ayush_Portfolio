@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="px-gutter max-w-container-max mx-auto mb-section-padding relative">
+    <section id="about" className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding relative overflow-hidden">
       {/* Decorative background glow */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="grid md:grid-cols-2 gap-stack-lg items-center relative z-10">
         {/* Left side: Photo Frame */}
         <div className="relative group max-w-md mx-auto md:mx-0 w-full">
-          <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-700"></div>
+          <div className="absolute -inset-2 md:-inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-700"></div>
           <div className="glass-card rounded-2xl overflow-hidden relative aspect-square shadow-2xl border border-white/10 group-hover:border-primary/30 transition-all duration-500">
             {/* We use standard img because we want to load the exact design URL without pre-configuring next/image domains, 
                 or we can use standard Next.js Image with unoptimized attribute */}
@@ -26,7 +26,7 @@ export default function About() {
 
         {/* Right side: Biography */}
         <div className="flex flex-col justify-center">
-          <h2 className="font-display text-4xl font-bold mb-stack-md text-white tracking-tight">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-stack-md text-white tracking-tight">
             About Me
           </h2>
           <p className="font-body text-body-lg text-on-surface-variant mb-stack-lg leading-relaxed">

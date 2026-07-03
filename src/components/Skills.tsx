@@ -23,7 +23,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="px-gutter max-w-container-max mx-auto mb-section-padding bg-surface-container-low/30 py-16 px-6 md:px-12 rounded-[2rem] border border-white/5 relative overflow-hidden"
+      className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding bg-surface-container-low/30 py-12 md:py-16 px-4 sm:px-6 md:px-12 rounded-2xl sm:rounded-[2rem] border border-white/5 relative overflow-hidden"
     >
       {/* Background glow decorator */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial from-primary/5 to-transparent blur-3xl pointer-events-none"></div>
@@ -31,7 +31,7 @@ export default function Skills() {
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-4xl font-bold text-white mb-3">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
             Technical Arsenal
           </h2>
           <p className="font-body text-body-md text-on-surface-variant max-w-lg mx-auto">

@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-[819px] flex flex-col justify-center px-gutter max-w-container-max mx-auto relative mb-section-padding pt-20"
+      className="min-h-[80vh] md:min-h-[819px] flex flex-col justify-center px-4 md:px-gutter max-w-container-max mx-auto relative mb-16 md:mb-section-padding pt-20 overflow-hidden"
     >
       {/* Background soft glow elements */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Heading */}
-        <h1 className="font-display text-5xl md:text-7xl font-extrabold mb-stack-md text-white tracking-tight leading-[1.1] selection:bg-primary/30">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold mb-stack-md text-white tracking-tight leading-[1.1] selection:bg-primary/30">
           Full Stack <span className="text-primary text-glow block md:inline">Web Developer</span>
         </h1>
 
@@ -42,22 +42,22 @@ export default function Hero() {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap gap-stack-md">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto">
           <a
             href="#projects"
             onClick={(e) => handleScrollTo(e, "projects")}
-            className="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-primary-container/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_20px_rgba(192,193,255,0.25)]"
+            className="bg-primary text-on-primary px-6 py-3.5 md:px-8 md:py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-[0_4px_20px_rgba(192,193,255,0.25)] w-full sm:w-auto"
           >
             View Projects 
             <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_forward</span>
           </a>
-          <button className="border border-secondary/60 text-secondary px-8 py-4 rounded-lg font-bold hover:bg-secondary/10 hover:border-secondary active:scale-[0.98] transition-all duration-300">
+          <button className="border border-secondary/60 text-secondary px-6 py-3.5 md:px-8 md:py-4 rounded-lg font-bold hover:bg-secondary/10 hover:border-secondary active:scale-[0.98] transition-all duration-300 w-full sm:w-auto">
             Download Resume
           </button>
           <a
             href="#contact"
             onClick={(e) => handleScrollTo(e, "contact")}
-            className="text-on-surface hover:text-primary px-8 py-4 font-medium transition-all duration-300 flex items-center"
+            className="text-on-surface hover:text-primary px-6 py-3.5 md:px-8 md:py-4 font-medium transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
           >
             Contact Me
           </a>
