@@ -113,7 +113,7 @@ export default function Contact() {
                     <span className="material-symbols-outlined text-lg">mail</span>
                   </div>
                   <span className="text-white font-medium hover:text-primary transition-colors cursor-pointer select-all">
-                    guidertech@gmail.com
+                    Arjunkumar18526@gmail.com
                   </span>
                 </div>
 
@@ -121,7 +121,7 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-lg">location_on</span>
                   </div>
-                  <span className="text-white font-medium">Global | Remote</span>
+                  <span className="text-white font-medium">Meerut, U.P</span>
                 </div>
               </div>
             </div>
