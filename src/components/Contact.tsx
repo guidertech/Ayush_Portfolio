@@ -82,35 +82,43 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-4 md:px-gutter max-w-container-max mx-auto mb-16 md:mb-section-padding relative">
-      <div className="glass-card p-6 sm:p-8 md:p-16 rounded-2xl sm:rounded-[2rem] overflow-hidden relative border border-white/10">
-        {/* Soft background light */}
-        <div className="absolute right-0 bottom-0 w-80 h-80 bg-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+    <section id="contact" className="py-16 md:py-section-padding px-4 md:px-gutter max-w-container-max mx-auto relative overflow-hidden">
+      {/* Soft background light */}
+      <div className="absolute right-0 bottom-0 w-96 h-96 bg-secondary/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 relative z-10">
+      <div className="glass-card p-6 sm:p-10 md:p-16 rounded-3xl overflow-hidden relative border border-white/5 z-10 bg-slate-950/40">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 relative z-10 text-left">
           {/* Left Column: Info */}
           <div className="flex flex-col justify-between">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-none tracking-tight">
-                Get in <span className="text-secondary text-glow">Touch</span>
+              {/* Section Badge */}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-wider mb-6">
+                <span className="material-symbols-outlined text-sm">mail</span>
+                Contact
+              </div>
+
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                Let's Build <br />
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-black">Something Great</span>
               </h2>
-              <p className="font-body text-body-lg text-on-surface-variant mb-10 max-w-md">
-                Have an interesting project in mind, a job opportunity, or just want to chat? My inbox is always open. Let's build something together!
+
+              <p className="font-body text-body-lg text-slate-400 mb-10 max-w-md leading-relaxed">
+                Have an exciting project idea, a job opportunity, or simply want to connect? My inbox is always open. Let's collaborate!
               </p>
 
               {/* Info Items */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary group-hover:border-primary/45 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center text-primary group-hover:border-primary/40 group-hover:text-white transition-all duration-300">
                     <span className="material-symbols-outlined text-lg">mail</span>
                   </div>
                   <span className="text-white font-medium hover:text-primary transition-colors cursor-pointer select-all">
-                    hello@devcraft.portfolio
+                    guidertech@gmail.com
                   </span>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center text-primary">
                     <span className="material-symbols-outlined text-lg">location_on</span>
                   </div>
                   <span className="text-white font-medium">Global | Remote</span>
@@ -119,29 +127,31 @@ export default function Contact() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex gap-4 mt-12 md:mt-0">
+            <div className="flex gap-3 mt-10 md:mt-0">
               <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary/20 hover:border-primary hover:text-primary transition-all text-white"
+                href="https://github.com/guidertech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center hover:bg-primary hover:text-slate-950 hover:border-primary hover:scale-[1.05] transition-all duration-300 text-slate-400"
                 aria-label="Link to Github"
               >
-                <span className="material-symbols-outlined">link</span>
+                <span className="material-symbols-outlined text-lg">link</span>
               </a>
               <a
                 href="#"
-                className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary/20 hover:border-primary hover:text-primary transition-all text-white"
+                className="w-11 h-11 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center hover:bg-primary hover:text-slate-950 hover:border-primary hover:scale-[1.05] transition-all duration-300 text-slate-400"
                 aria-label="Share Portfolio"
               >
-                <span className="material-symbols-outlined">share</span>
+                <span className="material-symbols-outlined text-lg">share</span>
               </a>
             </div>
           </div>
 
           {/* Right Column: Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs uppercase tracking-widest text-on-surface-variant mb-2 font-display font-semibold">
+                <label className="block text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-display font-bold">
                   Name
                 </label>
                 <input
@@ -150,17 +160,17 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   disabled={status === "sending"}
-                  className={`w-full bg-surface-container-lowest border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
-                    formErrors.name ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-primary"
-                  }`}
+                  className={`w-full bg-slate-950/60 border rounded-xl px-4 py-3 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-600 ${formErrors.name ? "border-red-400" : "border-white/5"
+                    }`}
                   placeholder="John Doe"
                 />
                 {formErrors.name && (
-                  <p className="text-red-400 text-xs mt-1.5 font-body">{formErrors.name}</p>
+                  <p className="text-red-400 text-xs mt-1 font-body text-left">{formErrors.name}</p>
                 )}
               </div>
+
               <div>
-                <label className="block text-xs uppercase tracking-widest text-on-surface-variant mb-2 font-display font-semibold">
+                <label className="block text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-display font-bold">
                   Email
                 </label>
                 <input
@@ -169,19 +179,18 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   disabled={status === "sending"}
-                  className={`w-full bg-surface-container-lowest border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
-                    formErrors.email ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-primary"
-                  }`}
+                  className={`w-full bg-slate-950/60 border rounded-xl px-4 py-3 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-600 ${formErrors.email ? "border-red-400" : "border-white/5"
+                    }`}
                   placeholder="john@example.com"
                 />
                 {formErrors.email && (
-                  <p className="text-red-400 text-xs mt-1.5 font-body">{formErrors.email}</p>
+                  <p className="text-red-400 text-xs mt-1 font-body text-left">{formErrors.email}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-widest text-on-surface-variant mb-2 font-display font-semibold">
+              <label className="block text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-display font-bold">
                 Subject
               </label>
               <input
@@ -190,18 +199,17 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 disabled={status === "sending"}
-                className={`w-full bg-surface-container-lowest border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all ${
-                  formErrors.subject ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-primary"
-                }`}
+                className={`w-full bg-slate-950/60 border rounded-xl px-4 py-3 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder-slate-600 ${formErrors.subject ? "border-red-400" : "border-white/5"
+                  }`}
                 placeholder="Project Inquiry"
               />
               {formErrors.subject && (
-                <p className="text-red-400 text-xs mt-1.5 font-body">{formErrors.subject}</p>
+                <p className="text-red-400 text-xs mt-1 font-body text-left">{formErrors.subject}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-widest text-on-surface-variant mb-2 font-display font-semibold">
+              <label className="block text-[10px] uppercase tracking-widest text-slate-400 mb-1.5 font-display font-bold">
                 Message
               </label>
               <textarea
@@ -210,24 +218,23 @@ export default function Contact() {
                 onChange={handleChange}
                 disabled={status === "sending"}
                 rows={4}
-                className={`w-full bg-surface-container-lowest border rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none ${
-                  formErrors.message ? "border-red-400 focus:ring-red-400" : "border-white/10 focus:ring-primary"
-                }`}
+                className={`w-full bg-slate-950/60 border rounded-xl px-4 py-3 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all resize-none placeholder-slate-600 ${formErrors.message ? "border-red-400" : "border-white/5"
+                  }`}
                 placeholder="Tell me about your project..."
               />
               {formErrors.message && (
-                <p className="text-red-400 text-xs mt-1.5 font-body">{formErrors.message}</p>
+                <p className="text-red-400 text-xs mt-1 font-body text-left">{formErrors.message}</p>
               )}
             </div>
 
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-primary text-on-primary font-display font-bold py-4 rounded-lg hover:bg-primary/95 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-primary to-secondary text-slate-950 font-display font-extrabold py-3.5 rounded-xl hover:brightness-110 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_20px_rgba(56,189,248,0.25)] text-sm"
             >
               {status === "sending" ? (
                 <>
-                  <span className="w-5 h-5 rounded-full border-2 border-on-primary border-t-transparent animate-spin"></span>
+                  <span className="w-4 h-4 rounded-full border-2 border-slate-950 border-t-transparent animate-spin"></span>
                   Sending Message...
                 </>
               ) : (
@@ -240,14 +247,15 @@ export default function Contact() {
 
       {/* Floating Status Toast Notification */}
       {showToast && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-secondary/15 border border-secondary/40 backdrop-blur-xl text-secondary px-5 py-4 rounded-xl shadow-xl animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-secondary/15 border border-secondary/40 backdrop-blur-xl text-secondary px-5 py-4 rounded-xl shadow-2xl animate-fade-in text-left">
           <span className="material-symbols-outlined text-glow">check_circle</span>
           <div>
             <p className="font-display font-semibold text-white text-sm">Message Sent Successfully!</p>
-            <p className="font-body text-xs text-on-surface-variant">I will get back to you shortly.</p>
+            <p className="font-body text-xs text-slate-400">I will get back to you shortly.</p>
           </div>
         </div>
       )}
     </section>
   );
 }
+

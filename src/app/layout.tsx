@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import "./globals.css";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +37,8 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-surface">
         {children}
+        <ThemeSwitcher />
+        <CustomCursor />
       </body>
     </html>
   );

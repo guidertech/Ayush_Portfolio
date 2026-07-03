@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #c0c1ff;
-  --color-secondary: #4fdbc8;
-  --color-surface: #051424;
-  --color-background: #051424;
-  --color-on-surface: #d4e4fa;
-  --color-on-background: #d4e4fa;
-  --color-on-surface-variant: #c7c4d7;
-  --color-surface-container-lowest: #010f1f;
-  --color-surface-container-low: #0d1c2d;
-  --color-surface-container: #122131;
-  --color-surface-container-high: #1c2b3c;
-  --color-surface-container-highest: #273647;
-  --color-surface-variant: #273647;
-  --color-outline: #908fa0;
-  --color-outline-variant: #464554;
-  --color-primary-container: #8083ff;
-  --color-on-primary: #1000a9;
-  --color-secondary-container: #04b4a2;
-  --color-on-secondary: #003731;
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-surface: #0b1528;
+  --color-background: #0b1528;
+  --color-on-surface: #e2e8f0;
+  --color-on-background: #e2e8f0;
+  --color-on-surface-variant: #94a3b8;
+  --color-surface-container-lowest: #030712;
+  --color-surface-container-low: #070f1e;
+  --color-surface-container: #0b1528;
+  --color-surface-container-high: #14223d;
+  --color-surface-container-highest: #1e3054;
+  --color-surface-variant: #14223d;
+  --color-outline: #475569;
+  --color-outline-variant: #334155;
+  --color-primary-container: var(--primary-container);
+  --color-on-primary: var(--on-primary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary: var(--on-secondary);
 
   --font-display: var(--font-geist-sans), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -34,8 +34,16 @@
 }
 
 :root {
-  --background: #051424;
-  --foreground: #d4e4fa;
+  --background: #0b1528;
+  --foreground: #e2e8f0;
+
+  /* Theme color variables - SLATE OCEAN (SKY BLUE & EMERALD) */
+  --primary: #38bdf8;
+  --secondary: #34d399;
+  --primary-container: #1e293b;
+  --secondary-container: #0f172a;
+  --on-primary: #0b1528;
+  --on-secondary: #0b1528;
 }
 
 html,
@@ -67,3 +75,115 @@ body {
 .text-glow {
   text-shadow: 0 0 15px rgba(192, 193, 255, 0.5);
 }
+
+/* Cyber-Grid Pattern & Mask */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.bg-grid-mask {
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+
+/* Dynamic Interactive Spotlight Glow */
+.spotlight-glow {
+  background: radial-gradient(
+    500px circle at var(--x, 0px) var(--y, 0px),
+    color-mix(in srgb, var(--primary) 12%, transparent),
+    transparent 80%
+  );
+}
+
+/* Ambient Drifting Animations */
+@keyframes drift {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, -60px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes drift-reverse {
+  0% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+  50% {
+    transform: translate(-50px, 40px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1.1);
+  }
+}
+
+.animate-drift {
+  animation: drift 20s infinite ease-in-out;
+}
+
+.animate-drift-reverse {
+  animation: drift-reverse 25s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+
+/* Custom Cursor Follower styles */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  select,
+  input,
+  textarea {
+    cursor: none !important;
+  }
+
+  .custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+
+  .custom-cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid var(--primary);
+    position: fixed;
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    transition: transform 0.08s ease-out, width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+  }
+
+  /* Hover states for interactive elements */
+  .custom-cursor-ring.hovered {
+    width: 56px;
+    height: 56px;
+    border-color: var(--secondary);
+    background-color: color-mix(in srgb, var(--secondary) 10%, transparent);
+  }
+
+  .custom-cursor-dot.hovered {
+    background-color: var(--secondary);
+    width: 4px;
+    height: 4px;
+  }
+}
+
+
