@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #c0c1ff;
+  --color-secondary: #4fdbc8;
+  --color-surface: #051424;
+  --color-background: #051424;
+  --color-on-surface: #d4e4fa;
+  --color-on-background: #d4e4fa;
+  --color-on-surface-variant: #c7c4d7;
+  --color-surface-container-lowest: #010f1f;
+  --color-surface-container-low: #0d1c2d;
+  --color-surface-container: #122131;
+  --color-surface-container-high: #1c2b3c;
+  --color-surface-container-highest: #273647;
+  --color-surface-variant: #273647;
+  --color-outline: #908fa0;
+  --color-outline-variant: #464554;
+  --color-primary-container: #8083ff;
+  --color-on-primary: #1000a9;
+  --color-secondary-container: #04b4a2;
+  --color-on-secondary: #003731;
+
+  --font-display: var(--font-geist-sans), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 16px;
+  --spacing-section-padding: 96px;
+}
+
+:root {
+  --background: #051424;
+  --foreground: #d4e4fa;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Custom Design Utilities */
+.glass-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(192, 193, 255, 0.4);
+  box-shadow: 0 0 20px rgba(192, 193, 255, 0.1);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(192, 193, 255, 0.5);
+}
